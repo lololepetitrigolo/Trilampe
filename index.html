@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- Metro UI -->
+    <link rel="stylesheet" href="https://cdn.korzh.com/metroui/v4.5.1/css/metro-all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <script src="donne.js"></script>
+    <link href="metro-icons.css" rel="stylesheet"/>
+    <title>Trilampe</title>
+    <link rel="icon" href="favicon.ico" />
+  </head>
+
+  <body class="w-100" id="bod-acc" >
+    
+  <div class="d-flex flex-row h-100" id="background" style="width: 300vw;">
+    <div class="h-vh-100 d-flex flex-column flex-justify-between" id="page">
+        <div id="chevron-r">
+                <button class="button d-flex flex-column m-0 h-100" onclick="alarmetoaccueil()" id="btn-r">
+                    <span class="icon mif-chevron-right mif-3x"></span>
+                    <p  class="m-0" style="font-size: 1em;">acceuil</p>
+                </button>
+       </div>
+        <div class="d-flex flex-align-center h-25">
+            <p class="mr-auto ml-auto text-bold" id="titre">ALARME</p>
+        </div>
+        <div class="h-25 pb-20 d-flex flex-column">
+            <div class="slider d-flex flex-justify-around w-75 flex-column mt-auto mb-0 ml-auto mr-auto ">
+                <p class=" ml-auto mr-auto" >luminosite</p>
+                <input class="h-25 ultra-thin cycle-marker w-vw-50 ml-auto mr-auto "  data-role="slider" data-hint="true" data-cls-complete="bg-black" id="lumreveil" data-on-change="Luminositereveil(arguments[0])">
+            </div>
+            <div class="slider d-flex flex-justify-around w-75  mt-auto mb-0 ml-auto mr-auto " >
+                <input class="ultra-thin cycle-marker h-vh-25" data-min="0" data-max="255" data-role="slider" data-vertical="true" data-hint="true" data-cls-complete="bg-red" id="rougereveil"  data-on-change="Rougereveil(arguments[0])">
+                <input  class="ultra-thin cycle-marker h-vh-25" data-min="0" data-max="255" data-role="slider" data-vertical="true" data-hint="true" data-cls-complete="bg-green" id="vertreveil"  data-on-change="Vertreveil(arguments[0])">
+                <input class="ultra-thin cycle-marker h-vh-25" data-min="0" data-max="255" data-role="slider" data-vertical="true" data-hint="true" data-cls-complete="bg-blue" id="bleureveil" data-on-change="Bleureveil(arguments[0])">        
+            </div>
+            
+        </div>
+        <div class="h-50 d-flex flex-column pt-20" >
+            <div class="h-50 d-flex flex-column">
+                <div class="timer mt-auto ml-auto mr-auto">
+                    <input  data-role="timepicker" data-on-set="Heure(arguments[0])" id="timer" data-distance="1" data-seconds="false">
+                </div>
+                <div class="OnOff pt-5 ml-auto mr-auto">
+                    <input type="checkbox" data-role="switch" data-on="on" id="activer" onclick="Activer();">
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="w-vw-100 h-vh-100 d-flex flex-column flex-justify-between" id="page">
+        <div class="" id="chevron-l">
+            <button class="button d-flex flex-column m-0 h-100" onclick="accueiltoalarme()"id="btn-l">
+                <span class="icon mif-chevron-left mif-3x"></span>
+                <p class="m-0" style="font-size: 1em;">alarme</p>
+            </button>
+        </div>
+        <div class="" id="chevron-r">
+            <button class="button d-flex flex-column m-0 h-100" onclick="accueiltocouleur()" id="btn-r">
+                <span class="icon mif-chevron-right mif-3x"></span>
+                <p class="m-0" style="font-size: 1em;">couleur</p>
+            </button>
+        </div>
+        <div class="d-flex flex-align-center h-25">
+            <p class="mr-auto ml-auto text-bold" id="titre">ACCUEIL</p>
+        </div>
+
+        <div class="d-flex flex-column-r h-25 mb-auto mt-auto">
+            <div class="slider d-flex flex-justify-around w-75 flex-column mt-auto mb-0 ml-auto mr-auto " >
+                <p class=" ml-auto mr-auto" >luminosite</p>
+                <input class="ultra-thin cycle-marker w-vw-50 mt-auto ml-auto mr-auto" id="luminosite" data-on-change="Luminosite(arguments[0])" data-role="slider" data-hint="true" data-cls-complete="bg-black">
+            </div>
+            <span class="icon mif-brightness mif-5x mt-auto mb-0 ml-auto mr-auto" onclick="Maj();"></span>
+            
+        </div>
+        
+            <div class="d-flex flex-column h-25">
+                <button class="button d-flex flex-column ml-auto mr-auto w-50 h-50" onclick="Appliquer();" id="btn">
+                    <span class="icon mif-checkmark mif-3x"></span>
+                    <p class="m-0" style="font-size: 1em;">appliquer</p>
+                </button>
+            </div>
+        </div>
+    <div class=" h-vh-100 w-vw-100 d-flex flex-column flex-justify-between" id="page">
+        <div id="chevron-l">
+            <button class="button d-flex flex-column m-0 h-100" onclick="couleurtoaccueil()" id="btn-l">
+                    <span class="icon mif-chevron-left mif-3x"></span>
+                    <p class="m-0" style="font-size: 1em;">acceuil</p>
+                </button>
+        </div>
+        <div class="d-flex flex-align-center h-25">
+            <p class="mr-auto ml-auto text-bold" id="titre">COULEUR</p>
+        </div>
+
+        <div class="h-25 mb-auto mt-auto">
+            <div class="slider d-flex flex-justify-around w-75  mt-auto mb-0 ml-auto mr-auto " >
+                <input class="ultra-thin cycle-marker h-vh-25" data-min="0" data-max="255" data-role="slider" data-vertical="true" data-hint="true" data-cls-complete="bg-red" id="rouge" data-on-change="Rouge(arguments[0])">
+                <input class="ultra-thin cycle-marker h-vh-25" data-min="0" data-max="255" data-role="slider" data-vertical="true" data-hint="true" data-cls-complete="bg-green" id="vert" data-on-change="Vert(arguments[0])">
+                <input class="ultra-thin cycle-marker h-vh-25" data-min="0" data-max="255" data-role="slider" data-vertical="true" data-hint="true" data-cls-complete="bg-blue" id="bleu" data-on-change="Bleu(arguments[0])">        
+            </div>
+        </div>
+            <div class="d-flex flex-column h-25">
+                <div class="d-flex flex-justify-around h-100 d-flex flex-content-center flex-wrap ">
+                    <button id="palette" class="button" onclick="Palette(255,255,255);" style="background-color:rgb(255,255,150);">
+                    </button>
+                    <button id="palette" class="button" onclick="Palette(250,170,0);" style="background-color:rgb(255,170,0);">
+                    </button>
+                    <button id="palette" class="button"  onclick="Palette(250,120,0);" style="background-color:rgb(250,120,0);">
+                    </button>
+                    <button id="palette" class="button" onclick="Palette(250,80,0);" style="background-color:rgb(250,90,0);">
+                    </button>
+                </div>
+                <div class="d-flex flex-justify-around h-100 d-flex flex-content-center flex-wrap">
+                    <button id="palette" class="button " onclick="Palette(107,175,0);" style="background-color:rgb(107,175,0);">
+                    </button>
+                    <button id="palette" class="button"  onclick="Palette(0,233,255);" style="background-color:rgb(0, 233, 255);">
+                    </button>
+                    <button id="palette" class="button"  onclick="Palette(0,41,255);" style="background-color:rgb(0, 68, 255);">
+                    </button>
+                    <button id="palette" class="button"  onclick="Palette(209,24,255);" style="background-color:rgb(209, 24, 255);">
+                    </button>
+                </div>
+            </div>
+        </div> 
+
+     <!--Metro UI -->
+    <script src="https://cdn.korzh.com/metroui/v4.5.1/js/metro.min.js"></script>
+        </div>
+    </body>
+</html>
+
+
+

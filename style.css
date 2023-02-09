@@ -1,0 +1,113 @@
+.mySwitch .check::after {
+    background: #0a87c1!important;
+    border-color: #0a87c1!important;
+}
+.mySwitch input[type="checkbox"]:checked ~ .check {
+    background: #0a87c1!important;
+}
+.mySwitch input[type="checkbox"]:checked ~ .check::after {
+    border-color: #ffffff!important;
+    background: #ffffff!important;
+}
+
+#btn-l{
+    color: rgb(49, 52, 58);
+    background-color: #dadadaa4;
+    font-weight: bold;
+    border-radius: 0 15px 15px 0;
+    z-index: 2;
+}
+
+#btn-r{
+    color: rgb(49, 52, 58);
+    background-color: #dadadaa4;
+    font-weight: bold;
+    border-radius: 15px 0 0 15px;
+    z-index: 2;
+}
+#btn{
+    color: rgb(49, 52, 58);
+    background-color: #dadadaa4;
+    font-weight: bold;
+    border-radius: 15px 15px 15px 15px;
+    z-index: 2;
+}
+
+#titre{
+    font-size: 2rem;
+}
+
+#chevron-l{
+    position: absolute;
+    top: 50%;
+}
+#chevron-r{
+    position: absolute;
+    top: 50%;
+    right: 0;
+}
+#page{
+    width: 100vw;
+}
+#bod-alarme{
+    animation: none;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#bod-acc{
+    animation: 1s ease-out forwards changealarmetoaccueil;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+@keyframes changealarmetoaccueil {
+    from { transform: translateX(-000vw); }
+    to   { transform: translateX(-100vw); }
+  }
+
+#bod-couleur{
+    animation: 1s ease-out forwards changecouleurtoaccueil;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+@keyframes changecouleurtoaccueil {
+    from { transform: translateX(-100vw); }
+    to   { transform: translateX(-200vw); }
+  }
+
+#bod-alarmebis{
+    animation: 1s ease-out forwards changeaccueiltoalarme;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+@keyframes changeaccueiltoalarme {
+    from { transform: translateX(-100vw); }
+    to   { transform: translateX(-000vw); }
+  }
+
+#bod-accbis{
+    animation: 1s ease-out forwards changeaccueiltocouleur;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+@keyframes changeaccueiltocouleur {
+    from { transform: translateX(-200vw); }
+    to   { transform: translateX(-100vw); }
+  }
+
+  #titre{
+    background-color: rgb(49, 52, 58);
+    padding: 20px;
+    background-color: #dadadaa4;
+    font-weight: bold;
+    border-radius: 15px 15px 15px 15px;
+  }
+#palette{
+    border-radius: 15px 15px 15px 15px;
+    border: solid;
+    width: 20%;
+    height: 50px;
+}
+p{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
