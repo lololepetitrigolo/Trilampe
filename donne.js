@@ -101,14 +101,14 @@ function Backgroud(){
         document.getElementById('state').style.color = 'rgb(' + rouge + ',' + vert + ',' + bleu + ')';
         document.getElementById('state').innerHTML = "on";
         document.getElementById('swi').style.backgroundColor = "#dadadaa4";
-        document.getElementById('swi').style.border = "none";
+        document.getElementById('swi').style.borderWidth = "0";
     }else{
         estAllume = true;
         document.getElementById('power').style.color = "black";
         document.getElementById('state').style.color = "black";
         document.getElementById('state').innerHTML = "off";
         document.getElementById('swi').style.backgroundColor = 'rgb(' + rouge + ',' + vert + ',' + bleu + ')';
-        document.getElementById('swi').style.border = "solid";
+        document.getElementById('swi').style.borderWidth = "5px";
     }
 
 }
