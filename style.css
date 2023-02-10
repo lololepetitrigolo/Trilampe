@@ -10,29 +10,6 @@
     background: #ffffff!important;
 }
 
-#btn-l{
-    color: rgb(49, 52, 58);
-    background-color: #dadadaa4;
-    font-weight: bold;
-    border-radius: 0 15px 15px 0;
-    z-index: 2;
-}
-
-#btn-r{
-    color: rgb(49, 52, 58);
-    background-color: #dadadaa4;
-    font-weight: bold;
-    border-radius: 15px 0 0 15px;
-    z-index: 2;
-}
-#btn{
-    color: rgb(49, 52, 58);
-    background-color: #dadadaa4;
-    font-weight: bold;
-    border-radius: 15px 15px 15px 15px;
-    z-index: 2;
-}
-
 #titre{
     font-size: 2rem;
 }
@@ -110,4 +87,31 @@
 }
 p{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+#btn-l{
+    color: rgb(49, 52, 58);
+    background-color: #dadadaa4;
+    font-weight: bold;
+    border-radius: 0 15px 15px 0;
+    z-index: 2;
+}
+
+#btn-r{
+    color: rgb(49, 52, 58);
+    background-color: #dadadaa4;
+    font-weight: bold;
+    border-radius: 15px 0 0 15px;
+    z-index: 2;
+}
+#btn{
+    color: rgb(49, 52, 58);
+    background-color: #dadadaa4;
+    font-weight: bold;
+    border-radius: 15px 15px 15px 15px;
+    z-index: 2;
+}
+
+#btn:active{
+    background-color: #c0bebea4;
 }

@@ -165,3 +165,6 @@ function Palette(r,v,b){
         Maj();
     }
 }
+
+
+Maj();
