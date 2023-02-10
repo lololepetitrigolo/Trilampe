@@ -11,6 +11,12 @@ var vertreveil = 0;
 var lumreveil = 0;
 var estAllume = false;
 
+if(lum == 0){
+    estAllume = false;
+}else{
+    estAllume = true;
+}
+
 function Luminosite(x){
     lum = x;
 }
@@ -196,8 +202,10 @@ function Palette(r,v,b){
 function Switch(){
     if(estAllume){
         lum = 0;
+        estAllume = false;
     }else{
         lum = 100;
+        estAllume = true;
     }
     
 
