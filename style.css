@@ -84,6 +84,7 @@
     border: solid;
     width: 20%;
     height: 50px;
+    transform: scale(1);
 }
 p{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
@@ -95,6 +96,7 @@ p{
     font-weight: bold;
     border-radius: 0 15px 15px 0;
     z-index: 2;
+    transform: scale(1);
 }
 
 #btn-r{
@@ -103,6 +105,7 @@ p{
     font-weight: bold;
     border-radius: 15px 0 0 15px;
     z-index: 2;
+    transform: scale(1);
 }
 #btn{
     color: rgb(49, 52, 58);
@@ -132,6 +135,6 @@ p{
     box-shadow: none;
 }
 
-#swi:active{
+#swi:active,#btn-l:active,#btn-r:active,#palette:active{
     transform: scale(0.95);
 }
