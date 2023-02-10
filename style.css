@@ -138,3 +138,91 @@ p{
 #swi:active,#btn-l:active,#btn-r:active,#palette:active{
     transform: scale(0.95);
 }
+
+
+#load{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100vw;
+    z-index: 5;
+    width: 75px;
+    height: 75px;
+}
+
+.container {
+    width: 75px;
+    height: 75px;
+    overflow: hidden;
+  }
+  #hourglass {
+    margin: auto;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    top: 0;
+    right: 0;
+    width: 75px;
+    height: 75px;
+    /* Scaled it cause it looks cuter */
+    transform: scale(0.75);
+  }
+  #bottom {
+    position: absolute;
+    top: 36px;
+    left: 15px;
+    border-left: 21px solid transparent;
+    border-right: 21px solid transparent;
+    border-bottom: 36px solid black;
+    animation: flipbottom 5s infinite ease-in-out;
+    transform-origin: 21px 0px;
+    border-radius: 0rem;
+  }
+  #bottom_two {
+    position: absolute;
+    top: 36px;
+    left: 15px;
+    border-left: 21px solid transparent;
+    border-right: 21px solid transparent;
+    border-bottom: 36px solid #dadadaa4;
+    animation: flipbottom 5s infinite ease-in-out;
+    transform-origin: 21px 0px;
+    animation-delay: 0.8s;
+    border-radius: 0.2rem;
+  }
+  @keyframes flipbottom {
+    0% {
+      transform: rotate(0deg);
+    }
+    10% {
+      transform: rotate(190deg) translate(-2px, 2px);
+    }
+    20% {
+      transform: rotate(172deg);
+    }
+    25% {
+      transform: rotate(184deg);
+    }
+    30% {
+      transform: rotate(180deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    60% {
+      transform: rotate(370deg) translate(-1px, 1px);
+    }
+    70% {
+      transform: rotate(352deg);
+    }
+    75% {
+      transform: rotate(364deg);
+    }
+    80% {
+      transform: rotate(360deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  

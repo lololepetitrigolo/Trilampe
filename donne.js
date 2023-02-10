@@ -90,7 +90,13 @@ function Appliquer(){
     XHR.onload = function() {
         Maj();
     }
+    document.getElementById('load').style.display = "flex";
+    setTimeout(Timer, 30000);
   
+}
+
+function Timer(){
+    document.getElementById('load').style.display = "none";
 }
 
 function Backgroud(){
@@ -182,6 +188,8 @@ function Palette(r,v,b){
     XHR.onload = function() {
         Maj();
     }
+    document.getElementById('load').style.display = "flex";
+    setTimeout(Timer, 30000);
 }
 
 
@@ -219,6 +227,8 @@ function Switch(){
     XHR.onload = function() {
         Maj();
     }
+    document.getElementById('load').style.display = "flex";
+    setTimeout(Timer, 30000);
 }
 
 Maj();
