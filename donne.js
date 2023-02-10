@@ -9,6 +9,7 @@ var rougereveil = 0;
 var bleureveil = 0;
 var vertreveil = 0;
 var lumreveil = 0;
+var estAllume = false;
 
 function Luminosite(x){
     lum = x;
@@ -87,12 +88,29 @@ function Appliquer(){
     XHR.open("GET", url);
     XHR.send();
     XHR.onload = function() {
+        Maj();
     }
   
 }
 
 function Backgroud(){
     document.getElementById('background').style.backgroundColor = 'rgb(' + rouge + ',' + vert + ',' + bleu + ')';
+    if(lum == 0){
+        estAllume = false;
+        document.getElementById('power').style.color = 'rgb(' + rouge + ',' + vert + ',' + bleu + ')';
+        document.getElementById('state').style.color = 'rgb(' + rouge + ',' + vert + ',' + bleu + ')';
+        document.getElementById('state').innerHTML = "on";
+        document.getElementById('swi').style.backgroundColor = "#dadadaa4";
+        document.getElementById('swi').style.border = "none";
+    }else{
+        estAllume = true;
+        document.getElementById('power').style.color = "black";
+        document.getElementById('state').style.color = "black";
+        document.getElementById('state').innerHTML = "off";
+        document.getElementById('swi').style.backgroundColor = 'rgb(' + rouge + ',' + vert + ',' + bleu + ')';
+        document.getElementById('swi').style.border = "solid";
+    }
+
 }
 
 function Maj(){
@@ -166,5 +184,41 @@ function Palette(r,v,b){
     }
 }
 
+
+function Switch(){
+    if(estAllume){
+        lum = 0;
+    }else{
+        lum = 100;
+    }
+    
+
+    const api_key = "0KOKL2XWUDT2GGT1";
+    var url =
+      "https://api.thingspeak.com/update?api_key=" +
+      api_key +
+      "&field1=" +
+      lum + Extend(rouge) +
+      "&field2=" +
+      vert + Extend(bleu) +
+      "&field3=" +
+      heure +
+      "&field4=" +
+      minute +
+      "&field5=" +
+      activer +
+      "&field6=" +
+      lumreveil + Extend(rougereveil) +
+      "&field7=" +
+      vertreveil + Extend(bleureveil);
+
+    // Configurez la requête
+    var XHR = new XMLHttpRequest();
+    XHR.open("GET", url);
+    XHR.send();
+    XHR.onload = function() {
+        Maj();
+    }
+}
 
 Maj();

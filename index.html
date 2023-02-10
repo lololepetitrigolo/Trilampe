@@ -75,7 +75,10 @@
                 <p class=" ml-auto mr-auto" >luminosité</p>
                 <input class="ultra-thin cycle-marker w-vw-50 mt-auto ml-auto mr-auto" id="luminosite" data-on-change="Luminosite(arguments[0])" data-role="slider" data-hint="true" data-cls-complete="bg-black">
             </div>
-            <span class="icon mif-brightness mif-5x mt-auto mb-0 ml-auto mr-auto" onclick="Maj();"></span>
+            <button id="swi" class="d-flex flex-column ml-auto mr-auto"  onclick="Switch();">
+                <span id="power"  class="icon mif-switch mif-3x mt-auto mb-0 ml-auto mr-auto"></span>
+                <p id="state" class="ml-auto mr-auto mt-0">on</p>
+            </button>
             
         </div>
         
@@ -132,8 +135,8 @@
         </div> 
 
      <!--Metro UI -->
-    <script src="donne.js"></script>
     <script src="https://cdn.korzh.com/metroui/v4.5.1/js/metro.min.js"></script>
+    <script src="donne.js"></script>
         </div>
     </body>
 </html>

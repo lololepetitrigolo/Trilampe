@@ -33,7 +33,7 @@
 }
 
 #bod-acc{
-    animation: 1s ease-out forwards changealarmetoaccueil;
+    animation: 1s ease-in-out forwards changealarmetoaccueil;
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -43,7 +43,7 @@
   }
 
 #bod-couleur{
-    animation: 1s ease-out forwards changecouleurtoaccueil;
+    animation: 1s ease-in-out forwards changecouleurtoaccueil;
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -53,7 +53,7 @@
   }
 
 #bod-alarmebis{
-    animation: 1s ease-out forwards changeaccueiltoalarme;
+    animation: 1s ease-in-out forwards changeaccueiltoalarme;
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -63,7 +63,7 @@
   }
 
 #bod-accbis{
-    animation: 1s ease-out forwards changeaccueiltocouleur;
+    animation: 1s ease-in-out forwards changeaccueiltocouleur;
     overflow-x: hidden;
     overflow-y: hidden;
 }
@@ -110,8 +110,26 @@ p{
     font-weight: bold;
     border-radius: 15px 15px 15px 15px;
     z-index: 2;
+    transform: scale(1);
+}
+#state{
+    font-weight: bold;
 }
 
-#btn:active{
+#btn:focus{
     background-color: #c0bebea4;
+    transform: scale(0.95);
+}
+
+#swi{
+    padding: 10px;
+    border-radius: 15px;
+    font-size: 20px;
+    width: 25vw;
+    height : 25vw;
+    transform: scale(1);
+}
+
+#swi:focus{
+    transform: scale(0.95);
 }
