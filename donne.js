@@ -11,11 +11,6 @@ var vertreveil = 0;
 var lumreveil = 0;
 var estAllume = false;
 
-if(lum == 0){
-    estAllume = false;
-}else{
-    estAllume = true;
-}
 
 function Luminosite(x){
     lum = x;
@@ -240,3 +235,9 @@ function Switch(){
 }
 
 Maj();
+
+if(lum == 0){
+    estAllume = false;
+}else{
+    estAllume = true;
+}
